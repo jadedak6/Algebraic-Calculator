@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <title>Algebraic Calculator</title>
+  </head>
+  <body>
+  <p class="heading">ALGEBRAIC  CALCULATOR</p>
+  <div class="input-group">
+    <input type="number" class="form-control" aria-label="amount" id="number" placeholder="Enter a number">
+  </div>
+ <div class="text-center">
+  <button class="btn btn-light" onclick="square()">Square</button>
+  <button class="btn btn-light" onclick="squareroot()">Square root</button>
+  <button class="btn btn-light" onclick="cube()">Cube</button>
+  <button class="btn btn-light" onclick="cuberoot()">Cube root</button>
+ </div>
+
+  <p class="answer" id="answerid"></p>
+
+  <script>
+
+    function square(){
+      if(document.getElementById("number").value === ""){
+        alert("Please enter a number")
+      }
+      let inputnum = document.getElementById("number").value;
+      let squareans;
+      squareans = inputnum * inputnum;
+      document.getElementById("answerid").innerHTML = "Square of " + inputnum + " is "+ squareans;
+    }
+
+    function squareroot(){
+      if(document.getElementById("number").value === ""){
+        alert("Please enter a number")
+      }
+      let inputnum = document.getElementById("number").value;
+      let squarerootans;
+      squarerootans = (Math.round(Math.sqrt(inputnum)*1000))/1000;
+      document.getElementById("answerid").innerHTML = "Square root of " + inputnum + " is "+ squarerootans;
+    }
+
+    function cube(){
+      if(document.getElementById("number").value === ""){
+        alert("Please enter a number")
+      }
+      let inputnum = document.getElementById("number").value;
+      let cubeans;
+      cubeans = inputnum * inputnum* inputnum;
+      document.getElementById("answerid").innerHTML = "Cube of " + inputnum + " is "+ cubeans;
+    }
+
+    function cuberoot(){
+      if(document.getElementById("number").value === ""){
+        alert("Please enter a number")
+      }
+      let inputnum = document.getElementById("number").value;
+      let cuberootans;
+      cuberootans = (Math.round(Math.cbrt(inputnum)*1000))/1000;
+      document.getElementById("answerid").innerHTML = "Cube root of " + inputnum + " is "+ cuberootans;
+    }
+  </script>
+
+  </body>
+</html>
